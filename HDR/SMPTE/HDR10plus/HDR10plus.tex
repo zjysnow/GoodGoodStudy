@@ -40,14 +40,23 @@ Overview \cite{DMfCVTA4}
 \section{Metadata Set}\
 \begin{table}[h]
     \centering
-    \begin{tabular}{*{5}{c}}
+    \resizebox{\linewidth}{!}{
+    \begin{tabular}{l|l|*{2}{l}}
         \toprule
-        C1 & C2 & C3 & C4 & C5 \\
+        \multicolumn{2}{c}{Metadata Item} & \multicolumn{2}{c}{Conformance}  \\
         \midrule
-        1 & 2 & 3 & 4 \\
-        5 & 6 & 7 & 8 \\
+        ApplicationIdentifier && \begin{tabular}{l}shall\end{tabular} & \begin{tabular}{l}4\end{tabular} \\
+        ApplicationVersion && \begin{tabular}{l}shall\end{tabular} & \begin{tabular}{l}0 or 1\end{tabular} \\
+        \midrule
+        TimeInterval &\begin{tabular}{l}TimeIntervalStart\\TimeIntervalDuration\end{tabular}&\begin{tabular}{l}shall one\end{tabular}& \\
+        \midrule
+        ProcessingWindow &\begin{tabular}{l}UpperLeftCorner\\LowerRightCorner\\WindowNumber\\ \midrule CenterOfEllipse \\ RotationAngle \\ SemiMajorAxisInternalEllipse \\ SemiMinorAxisExternalEllipse \\ SemiMajorAxisExternalEllipse \\ OverlapProcessOption\end{tabular}&\begin{tabular}{l}shall one \\ \\ \\ \midrule shall zero or one \\ \\ \\ \\ \\ \\\end{tabular}&\begin{tabular}{l} window 0 shall be always present \\ and shall cover all pixels \\shall be a maximum of 3 \\ \midrule shall be extened with \\ an elliptical pixel selector \\ if Window 1 and 2 is present \\ \\ \\ \\ \end{tabular} \\
+        \midrule
+        TargetedSystemDisplay &\begin{tabular}{l}TargetSystemDisplayMaximumLuminance \\ TargetedSystemDisplayActualPeakLuminance \end{tabular}&\begin{tabular}{l} shall one \\ shall zero or one \end{tabular}& \begin{tabular}{l} \\ shall/should not include \end{tabular} \\
+        \midrule
+        ColorVolumeTransform &\begin{tabular}{l} MaxSCL \\ AverageMaxRGB \\ DistributionMaxRGB \\ FractionBrightPixels \\ \midrule MasteringDisplayActualPeakLuminance \\ \midrule KneePoint \\ BezierCurveAnchors \\ \midrule ColorSaturationWeight \end{tabular}&\begin{tabular}{l} shall one \\ \\ \\ \\ \midrule shall zero or one \\ \midrule shall zero or one \\ shall if KneePoint is prsent \\ \midrule shall zero or one \\ \end{tabular}& \begin{tabular}{l} \\ \\ \\ \\ \midrule should/shall not include\\ \midrule \\ \\ \midrule should/shall not include\\ \end{tabular} \\
         \bottomrule
-    \end{tabular}
+    \end{tabular}}
 \end{table}
 
 \subsection{ApplicationVersion}
